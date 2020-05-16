@@ -1,0 +1,13 @@
+.drink-card {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 15px 0px black;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 2px 2px 15px 0px darkslategray;
+  }
+}

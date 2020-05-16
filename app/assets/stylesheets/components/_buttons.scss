@@ -1,0 +1,16 @@
+.index-button {
+  border: 2px solid white;
+  color: white;
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding: 9px 22px;
+  border-radius: 5px;
+  opacity: 0.3;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: white;
+  }
+}

@@ -1,22 +1,28 @@
-<h1><%= @cocktail.name %></h1>
-
-
-  <% unless @cocktail.photo.attached? %>
-  <%= cl_image_tag "default_img.jpg", height: 300, width: 400, crop: :fill %>
-  <% else %>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<nav>
+  <ul class="navbar">
+  <li>
+    <%= link_to 'Back', cocktails_path %>
+  </li>
+  <li>
+    <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="far fa-trash-alt"></i> delete
   <% end %>
+</li>
+  </ul>
+</nav>
 
-<ul>
-<% @cocktail.doses.each do |dose| %>
-<li><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "remove", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
-<% end %>
-</ul>
-
-<%= link_to 'Back', cocktails_path %>
-
-<%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-  <i class="far fa-trash-alt"></i>
-<% end %>
-
-<%= link_to "update ingredients", new_cocktail_dose_path(@cocktail) %>
+<div style="flex-grow: 1"></div>
+<div class="dose-container">
+  <div class="dose-card">
+    <div style="background-image: url('<%= get_cocktail_image(@cocktail) %>')">
+    </div>
+    <div class="dose-list">
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "remove", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= link_to "update ingredients", new_cocktail_dose_path(@cocktail) %>
+</div>

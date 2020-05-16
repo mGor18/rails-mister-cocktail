@@ -1,3 +1,5 @@
+include CloudinaryHelper
+
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :destroy]
   def index
@@ -36,4 +38,14 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
   end
+
+  def get_cocktail_image(cocktail)
+    if cocktail.photo.attached?
+      cl_image_path cocktail.photo.key
+    else
+      cl_image_path "default_img.jpg"
+    end
+  end
+
+  helper_method :get_cocktail_image
 end
