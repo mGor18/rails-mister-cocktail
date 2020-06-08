@@ -11,3 +11,4 @@ mint_leaves = Ingredient.create(name: "mint leaves")
 rum = Ingredient.create(name: "rum")
 mojito = Cocktail.create(name: "Mojito")
 mojito.doses.create(description: "10", cocktail: mojito, ingredient: mint_leaves)
+

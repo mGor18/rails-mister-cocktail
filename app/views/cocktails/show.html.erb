@@ -1,17 +1,3 @@
-<nav>
-  <ul class="navbar">
-  <li>
-    <%= link_to 'Back', cocktails_path %>
-  </li>
-  <li>
-    <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class="far fa-trash-alt"></i> delete
-  <% end %>
-</li>
-  </ul>
-</nav>
-
-<div style="flex-grow: 1"></div>
 <div class="dose-container">
   <div class="dose-card">
     <div style="background-image: url('<%= get_cocktail_image(@cocktail) %>')">
@@ -24,5 +10,19 @@
       </ul>
     </div>
   </div>
-  <%= link_to "update ingredients", new_cocktail_dose_path(@cocktail) %>
+  <footer>
+    <ul class="navbar">
+      <li>
+        <%= link_to 'Back', cocktails_path %>
+      </li>
+      <li>
+        <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i> delete
+      <% end %>
+      </li>
+      <li>
+        <%= link_to "update ingredients", new_cocktail_dose_path(@cocktail) %>
+      </li>
+        </ul>
+    </footer>
 </div>
