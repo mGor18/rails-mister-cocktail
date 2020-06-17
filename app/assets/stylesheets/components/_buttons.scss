@@ -1,15 +1,14 @@
 .index-button {
+  font-family: $headers-font;
   border: 2px solid white;
   color: white;
   font-size: 25px;
   letter-spacing: 2px;
-  padding: 9px 22px;
+  padding: 5px 10px;
   border-radius: 5px;
-  opacity: 0.3;
-  transition: 0.3s;
+  text-align: center;
 
-  &:hover {
-    opacity: 1;
+  a {
     text-decoration: none;
     color: white;
   }

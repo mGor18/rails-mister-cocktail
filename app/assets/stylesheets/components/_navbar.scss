@@ -1,14 +1,23 @@
-.navbar {
+.toolbar {
   display: flex;
-  text-decoration: none;
-  color: white;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  justify-content: space-around;
-  background: transparent;
+  align-items: center;
+  border: 10px solid #ffbd69;
+  border-top: 0;
+  border-radius: 0 0 20px 20px;
+  width: 100vw;
+  height: 95px;
 }
 
-.add-drink a {
-  text-decoration: none;
-  color: white;
+.nav-icons {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: row;
+  flex-grow: 1;
+
+  i {
+    text-decoration: none;
+    color: #ffbd69;
+    font-size: 30px;
+  }
 }

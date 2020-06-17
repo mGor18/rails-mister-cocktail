@@ -1,12 +1,10 @@
-<div class="add-drink navbar">
-  <%= link_to new_cocktail_path do %>
-    <i class='fas fa-glass-martini'></i> add
-  <% end %>
-</div>
-<div class="card-container">
-  <% @cocktails.each do |cocktail| %>
-    <div class="drink-card" style="background-image: linear-gradient(rgba(134,132,132,0.4),rgba(31,29,29,0.4)),url('<%= get_cocktail_image(cocktail) %>')">
-      <%= link_to cocktail.name, cocktail_path(cocktail), class: 'index-button' %>
+<div class="page-container">
+  <%= render 'shared/navbar' %>
+    <div class="card-container">
+      <% @cocktails.each do |cocktail| %>
+        <div class="drink-card" style="background-image: linear-gradient(rgba(134,132,132,0.4),rgba(31,29,29,0.4)),url('<%= get_cocktail_image(cocktail) %>')">
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: 'index-button' %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
 </div>

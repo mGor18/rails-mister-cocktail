@@ -12,17 +12,8 @@
   </head>
 
   <body>
-
-    <div class="page-container">
-      <div class="sidebar" style="background-image: url('<%= image_path "pour-sidebar.jpg" %>')">
-        <p>Speakeasy</p>
-      </div>
-      <div class="content-container">
-        <%= yield %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
-    </div>
-
+    <%= yield %>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
   </body>
 </html>
